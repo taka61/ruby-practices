@@ -34,10 +34,9 @@ end
 (first_day..last_day).each do |x|
   print  "#{x.day}".rjust(2)
   print " "
-  if x.saturday?
-    print  "\n" + (' ')
+    if x.saturday?
+      print  "\n" + (' ')
     end
 end
 
-puts ""
-
+puts
