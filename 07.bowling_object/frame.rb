@@ -2,17 +2,21 @@ require "pry"
 require './shot'
 
 class Frame
-  attr_reader :frame, :first_shot, :second_shot
+  attr_reader :frame, :first_shot, :second_shot, :third_shot
 
   def initialize(frame)
     @frame = frame
     @first_shot = Shot.new(@frame[0])
     @second_shot = Shot.new(@frame[1])
+    @third_shot = Shot.new(@frame[2])
   end
 
+  def convert_to_shot
+  [@first_shot.convert, @second_shot.convert]
+  end
 
-  def score
-  [@first_shot.convert, @second_shot.convert].sum
+  def convert_last
+    [@first_shot.convert, @second_shot.convert, @third_shot.convert]
   end
 end
 
