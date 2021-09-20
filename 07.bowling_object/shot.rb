@@ -1,12 +1,15 @@
-class Shot
-  attr_reader :mark
+# frozen_string_literal: true
 
-  def initialize(mark)
-    @mark = mark
+class Shot
+  attr_reader :shot
+
+  def initialize(shot)
+    @shot = shot
   end
 
   def convert
-    return 10 if mark == 'X'
-    mark.to_i
-    end
+    return 10 if shot == 'X'
+
+    shot.to_i
+  end
 end
