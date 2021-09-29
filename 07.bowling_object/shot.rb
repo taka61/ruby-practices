@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 class Shot
-  attr_reader :shot
+  attr_reader :score
 
-  def initialize(shot)
-    @shot = shot
+  def initialize(score)
+    @score = score
   end
 
-  def convert
-    return 10 if shot == 'X'
+  def convert_to_point
+    return 10 if score == 'X'
 
-    shot.to_i
+    score.to_i
   end
 end
