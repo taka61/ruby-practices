@@ -9,23 +9,23 @@ class Frame
     @third_shot = Shot.new(scores[2])
   end
 
-  def calc_nomarl_score
-    [@first_shot.convert_to_point, @second_shot.convert_to_point, @third_shot.convert_to_point].sum
+  def normal_score
+    [@first_shot.point, @second_shot.point, @third_shot.point].sum
   end
 
-  def calc_strike_score
-    [@first_shot.convert_to_point, @second_shot.convert_to_point].sum
+  def strike_score
+    [@first_shot.point, @second_shot.point].sum
   end
 
-  def calc_spare_score
-    [@first_shot.convert_to_point].sum
+  def spare_score
+    [@first_shot.point].sum
   end
 
   def strike?
-    @first_shot.convert_to_point == 10
+    @first_shot.point == 10
   end
 
   def spare?
-    @first_shot.convert_to_point != 10 && [@first_shot.convert_to_point, @second_shot.convert_to_point].sum == 10
+    @first_shot.point != 10 && [@first_shot.point, @second_shot.point].sum == 10
   end
 end
