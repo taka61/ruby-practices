@@ -15,7 +15,7 @@ class ShortFormat
     end
   end
 
-  def print_option
+  def print_infomartion
     lines = Array.new(row_number) { [] }
     @files.each_with_index do |file, index|
       line_number = index % row_number
