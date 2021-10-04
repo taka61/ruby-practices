@@ -18,7 +18,7 @@ class LongFormat
     @files = files
   end
 
-  def print_infomartion
+  def print_information
     file_stats = @files.map { |file| build_stat(file) }
     block_total = file_stats.map { |stat| stat[:blocks] }.sum
     max_size_map = build_max_size_map(file_stats)
